@@ -3,6 +3,17 @@ document.getElementById('btnDeposit').addEventListener('click',function(){
     // fetching field
     const depositFieldString=depositField0.value
     const depositField=parseFloat(depositFieldString);
+    // step 7 clear the deposit field
+    depositField0.value=''
+
+    if(isNaN(depositField)){
+        alert('Please Provide A Valid Number !');
+        return
+    }
+    if(depositField<0){
+        alert('Deposit Amount Can Not Be A Negative Number ! Provide Positive Integers Only');
+        return
+    }
 
 
     const depositTotal0 =  document.getElementById('depositTotal');
@@ -28,8 +39,7 @@ document.getElementById('btnDeposit').addEventListener('click',function(){
 
 
     
-    // step 7 clear the deposit field
-    depositField0.value=''
+    
 
     
 })
