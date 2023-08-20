@@ -3,7 +3,7 @@ document.getElementById('btnWithdraw').addEventListener('click',function(){
     const userWithdraw = document.getElementById('userWithdraw');
     const newWithdrawString =userWithdraw.value;
     const newWithdraw = parseFloat(newWithdrawString);
-    console.log(newWithdraw);
+    // console.log(newWithdraw);
     
     
     // step 7 clear the withdraw field
