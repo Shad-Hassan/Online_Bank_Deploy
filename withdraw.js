@@ -1,7 +1,18 @@
 document.getElementById('btnWithdraw').addEventListener('click',function(){
+    // step 2 
     const userWithdraw = document.getElementById('userWithdraw');
     const newWithdrawString =userWithdraw.value;
     const newWithdraw = parseFloat(newWithdrawString);
+    console.log(newWithdraw);
+    
+    
+    // step 7 clear the withdraw field
+    userWithdraw.value='';
+    
+    if(isNaN(newWithdraw)){
+        alert('Please Provide A Valid Number !');
+        return
+    }
     
 
     const withdrawTotal0 = document.getElementById('withdrawField');
@@ -9,12 +20,7 @@ document.getElementById('btnWithdraw').addEventListener('click',function(){
     const withdrawTotal = parseFloat(withdrawTotalString);
     
 
-    // step 4
-    const withdrawCurrent = withdrawTotal+newWithdraw;
-
-
     
-    withdrawTotal0.innerText = withdrawCurrent;
 
 
 
@@ -23,14 +29,23 @@ document.getElementById('btnWithdraw').addEventListener('click',function(){
     const balenciagaWString = balenciagaW.innerText;
     const balenciagaWTotal = parseFloat(balenciagaWString);
 
+    
+
+    if(newWithdraw > balenciagaWTotal){
+        alert('Negative Balance not Allowed !!')
+        return
+    }
+    // step 4
+    const withdrawCurrent = withdrawTotal+newWithdraw;    
+    withdrawTotal0.innerText = withdrawCurrent;
+
 
     // step 6
     const newBalanceTotal = balenciagaWTotal - newWithdraw;
     balenciagaW.innerText=newBalanceTotal;
 
     
-    // step 7 clear the withdraw field
-    userWithdraw.value='';
+    
 
 
 })
