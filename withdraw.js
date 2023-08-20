@@ -14,6 +14,11 @@ document.getElementById('btnWithdraw').addEventListener('click',function(){
         return
     }
     
+    if(newWithdraw<0){
+        alert('Withdraw Amount Can Not Be A Negative Number ! Provide Positive Integers Only');
+        return
+    }
+    
 
     const withdrawTotal0 = document.getElementById('withdrawField');
     const withdrawTotalString = withdrawTotal0.innerText;
